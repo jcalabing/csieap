@@ -11,6 +11,12 @@ const theme = createMuiTheme({
       contrastText: "#EFF9F0",
     },
   },
+  typography: {
+    h4: {
+      fontWeight: 700,
+      padding: 10,
+    },
+  },
 });
 
 export default theme;

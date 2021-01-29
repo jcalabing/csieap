@@ -5,7 +5,7 @@ import { Container, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   stickyFooter: {
-    backgroundColor: "#84828F",
+    backgroundColor: "#916b03",
     padding: theme.spacing(3, 2),
     marginTop: "auto",
     color: "#fff",
