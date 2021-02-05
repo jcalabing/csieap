@@ -1,10 +1,10 @@
 import React from "react";
 import { ThemeProvider } from "@material-ui/core";
-import Adminbar from "../../components/Adminbar";
 import Theme from "../../assets/Theme";
-import { Switch, Route, Router, Redirect } from "react-router-dom";
+import { Switch, Route, Router, Redirect, useLocation } from "react-router-dom";
 import routes from "../../routes/adminRoute.js";
 import { createBrowserHistory } from "history";
+import ResponsiveDrawer from "./../../components/ResponsiveDrawer";
 
 const hist = createBrowserHistory();
 const switchRoutes = (
@@ -17,6 +17,7 @@ const switchRoutes = (
               path={prop.layout + prop.path}
               component={prop.component}
               key={key}
+              name={prop.name}
             />
           );
         }
@@ -27,12 +28,25 @@ const switchRoutes = (
   </Router>
 );
 
-export default function Admin({ ...rest }) {
+function HeaderView() {
+  let x;
+  let y;
+  const location = useLocation();
+  routes.find((prop) => {
+    if (prop.layout + prop.path === location.pathname) {
+      x = prop.name;
+    }
+    y = prop.name;
+  });
+  return x ? x : y;
+}
+
+export default function Admin() {
   return (
     <ThemeProvider theme={Theme}>
-      <Adminbar theme={Theme} routes={routes}>
+      <ResponsiveDrawer theme={Theme} routes={routes} pageTitle={HeaderView()}>
         {switchRoutes}
-      </Adminbar>
+      </ResponsiveDrawer>
     </ThemeProvider>
   );
 }

@@ -56,6 +56,7 @@ const styles = (theme) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
+    zIndex: 0,
   },
   drawerOpen: {
     width: drawerWidth,
