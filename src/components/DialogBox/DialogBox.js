@@ -8,6 +8,8 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
+import CancelIcon from "@material-ui/icons/Cancel";
+import { amber } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -16,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
+  },
+  button: {
+    backgroundColor: amber,
   },
 }));
 
@@ -49,11 +54,13 @@ export default function DialogBox(props) {
           <Toolbar>
             <IconButton
               edge="start"
-              color="inherit"
+              // color="inherit"
               onClick={handleClose}
               aria-label="close"
+              color="secondary"
+              className={classes.button}
             >
-              <CloseIcon />
+              <CancelIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
               {title}
