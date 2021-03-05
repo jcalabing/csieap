@@ -29,7 +29,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 export default function DialogBox(props) {
-  const { children, triggerDialog, title } = props;
+  const { children, triggerDialog, title, submitData } = props;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -65,7 +65,7 @@ export default function DialogBox(props) {
             <Typography variant="h6" className={classes.title}>
               {title}
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
+            <Button autoFocus color="inherit" onClick={submitData}>
               save
             </Button>
           </Toolbar>

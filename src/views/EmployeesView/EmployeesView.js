@@ -18,6 +18,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function EmployeesView() {
   const classes = useStyles();
+  const [pdsData, setValue] = React.useState({});
+
+  const saveData = (Key, Value) => {
+    var newValue = pdsData;
+    newValue[Key] = Value;
+    setValue(newValue);
+  };
   return (
     <Grid container>
       <Grid container>
@@ -32,8 +39,9 @@ export default function EmployeesView() {
                   </Button>
                 );
               }}
+              submitData={() => console.log(pdsData)}
             >
-              <FormPDS></FormPDS>
+              <FormPDS saveData={saveData} pdsData={pdsData}></FormPDS>
             </DialogBox>
           </MuiThemeProvider>
         </Grid>

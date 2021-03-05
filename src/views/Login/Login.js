@@ -93,6 +93,7 @@ export default function Login() {
                     color="primary"
                     className={classes.submit}
                     variant="contained"
+                    href="/admin"
                   >
                     Sign In
                   </Button>

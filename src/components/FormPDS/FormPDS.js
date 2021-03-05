@@ -14,13 +14,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FormPDS() {
+export default function FormPDS(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const { saveData, pdsData } = props;
   return (
     <Container component="main" maxWidth="lg">
       <CssBaseline />
@@ -34,7 +30,7 @@ export default function FormPDS() {
             "VIII. Other Info",
           ]}
           tabContent={[
-            <PersonalInformation />,
+            <PersonalInformation saveData={saveData} pdsData={pdsData} />,
             <FamilyBackground />,
             <EducationalBackground />,
             <IvtoVii />,

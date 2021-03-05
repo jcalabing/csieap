@@ -26,6 +26,8 @@ function FormFields(props) {
     md,
     sm,
     xs,
+    onChange,
+    value,
   } = props;
   return (
     <Grid item xs={xs ? xs : 12} sm={sm ? sm : 6} md={md ? md : 3}>
@@ -39,13 +41,25 @@ function FormFields(props) {
         defaultValue={defaultValue}
         views={views}
         format={format}
+        onChange={onChange}
+        value={value}
       />
     </Grid>
   );
 }
 
 function RequiredFields(props) {
-  const { idname, label, type, defaultValue, md, sm, xs } = props;
+  const {
+    idname,
+    label,
+    type,
+    defaultValue,
+    md,
+    sm,
+    xs,
+    onChange,
+    value,
+  } = props;
   return (
     <Grid item xs={xs ? xs : 12} sm={sm ? sm : 6} md={md ? md : 3}>
       <TextField
@@ -57,19 +71,21 @@ function RequiredFields(props) {
         name={idname}
         type={type}
         defaultValue={defaultValue}
+        onChange={onChange}
+        value={value}
       />
     </Grid>
   );
 }
 
 function SelectFields(props) {
-  const { options, label, md, sm, xs } = props;
+  const { options, label, md, sm, xs, value, onChange } = props;
   return (
     <Grid item xs={xs ? xs : 12} sm={sm ? sm : 6} md={md ? md : 3}>
       <FormControl variant="outlined" fullWidth required>
         <InputLabel htmlFor="outlined-age-native-simple">{label}</InputLabel>
-        <Select native label={label} fullWidth required>
-          <option aria-label="None" value="" />
+        <Select native label={label} fullWidth required onChange={onChange}>
+          <option value={value}>{value}</option>
           {options.map((val) => (
             <option value={val}>{val}</option>
           ))}
@@ -93,9 +109,10 @@ function FieldDividers(props) {
 }
 
 function FieldDates(props) {
-  const defaultdate = React.useState(new Date());
-  const [selectedDate, handleDateChange] = React.useState(new Date());
-  const { format, label, views, id, md, sm, xs } = props;
+  const { format, label, views, id, md, sm, xs, onChange, value } = props;
+  const [selectedDate, handleDateChange] = React.useState(
+    value == null ? new Date() : value
+  );
   return (
     <Grid item xs={xs ? xs : 12} sm={sm ? sm : 6} md={md ? md : 3}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -108,9 +125,12 @@ function FieldDates(props) {
           label={label}
           format={format}
           views={views}
-          value={selectedDate === defaultdate[0] ? null : selectedDate}
-          onClick={() => console.log("test")}
-          onChange={handleDateChange}
+          defaultValue={value}
+          value={selectedDate}
+          onChange={(e) => {
+            onChange(e);
+            handleDateChange(e);
+          }}
           KeyboardButtonProps={{
             "aria-label": "change date",
           }}

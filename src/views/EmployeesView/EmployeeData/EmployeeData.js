@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id", headerName: "ID Number", width: 150 },
   { field: "firstName", headerName: "First name", width: 200 },
   { field: "lastName", headerName: "Last name", width: 200 },
   {
