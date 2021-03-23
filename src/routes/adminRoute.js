@@ -1,9 +1,11 @@
 import DashboardView from "./../views/DashboardView";
 import Dashboard from "@material-ui/icons/Dashboard";
 import ProfileView from "./../views/ProfileView";
+import UserView from "./../views/UserView";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import EmployeesView from "./../views/EmployeesView/EmployeesView";
 import PeopleIcon from "@material-ui/icons/People";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 
 const adminRoute = [
   {
@@ -25,6 +27,15 @@ const adminRoute = [
     nav: true,
   },
   {
+    path: "/user",
+    name: "Users",
+    icon: SupervisedUserCircleIcon,
+    component: UserView,
+    layout: "/admin",
+    key: "user",
+    nav: true,
+  },
+  {
     path: "/profile",
     name: "My Profile",
     icon: AccountBoxIcon,
@@ -33,6 +44,7 @@ const adminRoute = [
     key: "profile",
     nav: true,
   },
+
   {
     path: "/",
     name: "Dashboard",

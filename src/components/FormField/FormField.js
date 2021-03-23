@@ -85,9 +85,13 @@ function SelectFields(props) {
       <FormControl variant="outlined" fullWidth required>
         <InputLabel htmlFor="outlined-age-native-simple">{label}</InputLabel>
         <Select native label={label} fullWidth required onChange={onChange}>
-          <option value={value}>{value}</option>
+          <option value={value} key={value}>
+            {value}
+          </option>
           {options.map((val) => (
-            <option value={val}>{val}</option>
+            <option value={val} key={val}>
+              {val}
+            </option>
           ))}
         </Select>
       </FormControl>

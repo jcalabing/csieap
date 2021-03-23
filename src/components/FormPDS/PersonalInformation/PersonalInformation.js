@@ -10,14 +10,14 @@ import {
 } from "./../../FormField";
 
 export default function PersonalInformation(props) {
-  const { saveData, pdsData } = props;
+  const { saveData, jsonData } = props;
   return (
     <Grid container spacing={2}>
       {/* <FieldDivider label="I. PERSONAL INFORMATION" /> */}
       <RequiredField
         label="SURNAME"
         idname="surname"
-        value={pdsData.surname}
+        value={jsonData.surname}
         onChange={(e) => {
           saveData("surname", e.target.value);
         }}
@@ -25,7 +25,7 @@ export default function PersonalInformation(props) {
       <RequiredField
         label="FIRST NAME"
         idname="firstname"
-        value={pdsData.firstname}
+        value={jsonData.firstname}
         onChange={(e) => {
           saveData("firstname", e.target.value);
         }}
@@ -33,7 +33,7 @@ export default function PersonalInformation(props) {
       <RequiredField
         label="MIDDLE NAME"
         idname="middlename"
-        value={pdsData.middlename}
+        value={jsonData.middlename}
         onChange={(e) => {
           saveData("middlename", e.target.value);
         }}
@@ -41,7 +41,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="NAME EXTENSION"
         idname="extension"
-        value={pdsData.extension}
+        value={jsonData.extension}
         onChange={(e) => {
           saveData("extension", e.target.value);
         }}
@@ -51,7 +51,7 @@ export default function PersonalInformation(props) {
         type="date"
         format="MM/dd/yyyy"
         idname="date_birth"
-        value={pdsData.date_birth}
+        value={jsonData.date_birth}
         onChange={(e) => {
           console.log(e);
           saveData("date_birth", e);
@@ -60,7 +60,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="PLACE OF BIRTH"
         idname="place_birth"
-        value={pdsData.place_birth}
+        value={jsonData.place_birth}
         onChange={(e) => {
           saveData("place_birth", e.target.value);
         }}
@@ -70,7 +70,7 @@ export default function PersonalInformation(props) {
         label="SEX"
         options={["MALE", "FEMALE"]}
         idname="sex"
-        value={pdsData.sex}
+        value={jsonData.sex}
         onChange={(e) => {
           saveData("sex", e.target.value);
         }}
@@ -80,7 +80,7 @@ export default function PersonalInformation(props) {
         label="CIVIL STATUS"
         options={["SINGLE", "MARRIED", "WIDOWED", "SEPERATED", "OTHERS"]}
         idname="civil_status"
-        value={pdsData.civil_status}
+        value={jsonData.civil_status}
         onChange={(e) => {
           saveData("civil_status", e.target.value);
         }}
@@ -89,7 +89,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="HEIGHT"
         idname="height"
-        value={pdsData.height}
+        value={jsonData.height}
         onChange={(e) => {
           saveData("height", e.target.value);
         }}
@@ -97,7 +97,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="WEIGHT"
         idname="weight"
-        value={pdsData.weight}
+        value={jsonData.weight}
         onChange={(e) => {
           saveData("weight", e.target.value);
         }}
@@ -105,7 +105,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="BLOOD TYPE"
         idname="blood_type"
-        value={pdsData.blood_type}
+        value={jsonData.blood_type}
         onChange={(e) => {
           saveData("blood_type", e.target.value);
         }}
@@ -113,7 +113,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="GSIS ID NO"
         idname="gsis"
-        value={pdsData.gsis}
+        value={jsonData.gsis}
         onChange={(e) => {
           saveData("gsis", e.target.value);
         }}
@@ -122,7 +122,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="PAG-IBIG ID NO"
         idname="pagibig"
-        value={pdsData.pagibig}
+        value={jsonData.pagibig}
         onChange={(e) => {
           saveData("pagibig", e.target.value);
         }}
@@ -130,7 +130,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="PHILHEALTH NO"
         idname="philhealth"
-        value={pdsData.philhealth}
+        value={jsonData.philhealth}
         onChange={(e) => {
           saveData("philhealth", e.target.value);
         }}
@@ -138,7 +138,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="SSS NO"
         idname="sss"
-        value={pdsData.sss}
+        value={jsonData.sss}
         onChange={(e) => {
           saveData("sss", e.target.value);
         }}
@@ -146,7 +146,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="TIN NO"
         idname="tin"
-        value={pdsData.tin}
+        value={jsonData.tin}
         onChange={(e) => {
           saveData("tin", e.target.value);
         }}
@@ -155,7 +155,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="AGENCY EMPLOYEE NO"
         idname="employee_no"
-        value={pdsData.employee_no}
+        value={jsonData.employee_no}
         onChange={(e) => {
           saveData("employee_no", e.target.value);
         }}
@@ -166,7 +166,7 @@ export default function PersonalInformation(props) {
         label="CITIZENSHIP"
         options={["FILIPINO", "DUAL CITIZENSHIP"]}
         idname="citizenship"
-        value={pdsData.citizenship}
+        value={jsonData.citizenship}
         onChange={(e) => {
           saveData("citizenship", e.target.value);
         }}
@@ -175,7 +175,7 @@ export default function PersonalInformation(props) {
         label="CITIZENSHIP BY"
         options={["BIRTH", "NATURALIZATION"]}
         idname="dual_citizenship"
-        value={pdsData.dual_citizenship}
+        value={jsonData.dual_citizenship}
         onChange={(e) => {
           saveData("dual_citizenship", e.target.value);
         }}
@@ -184,7 +184,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="COUNTRY"
         idname="country"
-        value={pdsData.country}
+        value={jsonData.country}
         onChange={(e) => {
           saveData("country", e.target.value);
         }}
@@ -194,7 +194,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="HOUSE/ BLOCK/ LOT NO"
         idname="residential_house"
-        value={pdsData.residential_house}
+        value={jsonData.residential_house}
         onChange={(e) => {
           saveData("residential_house", e.target.value);
         }}
@@ -202,7 +202,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="STREET"
         idname="residential_street"
-        value={pdsData.residential_street}
+        value={jsonData.residential_street}
         onChange={(e) => {
           saveData("residential_street", e.target.value);
         }}
@@ -210,7 +210,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="SUBDIVISION/ VILLAGE"
         idname="residential_village"
-        value={pdsData.residential_village}
+        value={jsonData.residential_village}
         onChange={(e) => {
           saveData("residential_village", e.target.value);
         }}
@@ -218,7 +218,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="BARANGAY"
         idname="residential_barangay"
-        value={pdsData.residential_barangay}
+        value={jsonData.residential_barangay}
         onChange={(e) => {
           saveData("residential_barangay", e.target.value);
         }}
@@ -226,7 +226,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="CITY MUNICIPALITY"
         idname="residential_city"
-        value={pdsData.residential_city}
+        value={jsonData.residential_city}
         onChange={(e) => {
           saveData("residential_city", e.target.value);
         }}
@@ -234,7 +234,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="PROVINCE"
         idname="residential_province"
-        value={pdsData.residential_province}
+        value={jsonData.residential_province}
         onChange={(e) => {
           saveData("residential_province", e.target.value);
         }}
@@ -242,7 +242,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="ZIP CODE"
         idname="residential_zip"
-        value={pdsData.residential_zip}
+        value={jsonData.residential_zip}
         onChange={(e) => {
           saveData("residential_zip", e.target.value);
         }}
@@ -252,7 +252,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="HOUSE/ BLOCK/ LOT NO"
         idname="permanent_house"
-        value={pdsData.permanent_house}
+        value={jsonData.permanent_house}
         onChange={(e) => {
           saveData("permanent_house", e.target.value);
         }}
@@ -260,7 +260,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="STREET"
         idname="permanent_street"
-        value={pdsData.permanent_street}
+        value={jsonData.permanent_street}
         onChange={(e) => {
           saveData("permanent_street", e.target.value);
         }}
@@ -268,7 +268,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="SUBDIVISION/ VILLAGE"
         idname="permanent_village"
-        value={pdsData.permanent_village}
+        value={jsonData.permanent_village}
         onChange={(e) => {
           saveData("permanent_village", e.target.value);
         }}
@@ -276,7 +276,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="BARANGAY"
         idname="permanent_barangay"
-        value={pdsData.permanent_barangay}
+        value={jsonData.permanent_barangay}
         onChange={(e) => {
           saveData("permanent_barangay", e.target.value);
         }}
@@ -284,7 +284,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="CITY MUNICIPALITY"
         idname="permanent_city"
-        value={pdsData.permanent_city}
+        value={jsonData.permanent_city}
         onChange={(e) => {
           saveData("permanent_city", e.target.value);
         }}
@@ -292,7 +292,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="PROVINCE"
         idname="permanent_province"
-        value={pdsData.permanent_province}
+        value={jsonData.permanent_province}
         onChange={(e) => {
           saveData("permanent_province", e.target.value);
         }}
@@ -300,7 +300,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="ZIP CODE"
         idname="permanent_zip"
-        value={pdsData.permanent_zip}
+        value={jsonData.permanent_zip}
         onChange={(e) => {
           saveData("permanent_zip", e.target.value);
         }}
@@ -310,7 +310,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="TELEPHONE NO"
         idname="telephone"
-        value={pdsData.telephone}
+        value={jsonData.telephone}
         onChange={(e) => {
           saveData("telephone", e.target.value);
         }}
@@ -318,7 +318,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="MOBILE NO"
         idname="mobile"
-        value={pdsData.mobile}
+        value={jsonData.mobile}
         onChange={(e) => {
           saveData("mobile", e.target.value);
         }}
@@ -326,7 +326,7 @@ export default function PersonalInformation(props) {
       <FormField
         label="E-MAIL ADDRESS"
         idname="email"
-        value={pdsData.email}
+        value={jsonData.email}
         onChange={(e) => {
           saveData("email", e.target.value);
         }}

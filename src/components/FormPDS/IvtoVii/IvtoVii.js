@@ -8,14 +8,10 @@ import {
   VoluntaryField,
   LearningField,
 } from "./../../IncrementingComponent";
-import {
-  FormField,
-  FieldDivider,
-  FieldDate,
-  SelectField,
-} from "./../../FormField";
+import { FieldDivider } from "./../../FormField";
 
 export default function IvtoVii(props) {
+  const { saveData, jsonData } = props;
   return (
     <Grid container spacing={2}>
       <FieldDivider label="IV. CAREER SERVICE/ RA 1080(BOARD/BAR) UNDER SPECIAL LAWS/ CES/ CSEE BARANGAY ELIGIBILITY/ DRIVERS LICENSE" />

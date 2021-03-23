@@ -1,11 +1,12 @@
 import React from "react";
-import { makeStyles, Paper, Grid, Button } from "@material-ui/core";
-import EmployeeData from "./EmployeeData";
+import { makeStyles, Paper, Grid, Button, Typography } from "@material-ui/core";
 import Extheme from "./../../assets/Extheme/Extheme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import DialogBox from "../../components/DialogBox";
-import FormPDS from "../../components/FormPDS";
-import EmployeeApi from "./../../API/EmployeeApi";
+import FormUser from "../../components/FormUser";
+import UserData from "./UserData";
+import GetUserData from "./GetUserData/";
+import UserApi from "./../../API/UserApi";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EmployeesView() {
+export default function UserView() {
   const classes = useStyles();
   const [jsonData, setValue] = React.useState({});
 
@@ -32,7 +33,7 @@ export default function EmployeesView() {
         <Grid item xs={12} md={6}>
           <MuiThemeProvider theme={Extheme}>
             <DialogBox
-              title="Add New Employee"
+              title="Add New User"
               triggerDialog={(trigger) => {
                 return (
                   <Button color="primary" variant="contained" onClick={trigger}>
@@ -40,16 +41,16 @@ export default function EmployeesView() {
                   </Button>
                 );
               }}
+              submitData={() => UserApi.addNewUser(jsonData)}
               // submitData={() => console.log(jsonData)}
-              submitData={() => EmployeeApi.addNewEmployee(jsonData)}
             >
-              <FormPDS saveData={saveData} jsonData={jsonData}></FormPDS>
+              <FormUser saveData={saveData} jsonData={jsonData}></FormUser>
             </DialogBox>
           </MuiThemeProvider>
         </Grid>
       </Grid>
       <Grid item xs={12} component={Paper} className={classes.marginalized}>
-        <EmployeeData className={classes.container} />
+        <GetUserData />
       </Grid>
     </Grid>
   );

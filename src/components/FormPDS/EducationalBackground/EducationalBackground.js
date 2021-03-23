@@ -10,59 +10,106 @@ import {
   VocationalField,
 } from "./../../IncrementingComponent";
 export default function EducationalBackground(props) {
+  const { saveData, jsonData } = props;
   return (
     <Grid container spacing={2}>
       {/* <FieldDivider label="III. EDUCATIONAL BACKGROUND" /> */}
 
       <FieldDivider label="ELEMENTARY" />
-      <FormField idname="elementarySchool" label="SCHOOL NAME" />
       <FormField
-        idname="elementaryDegree"
+        label="SCHOOL NAME"
+        idname="elementary_name"
+        value={jsonData.elementary_name}
+        onChange={(e) => {
+          saveData("elementary_name", e.target.value);
+        }}
+      />
+      <FormField
         label="BASIC EDUCATION/ DEGREE/ COURSE"
+        idname="elementary_basic"
+        value={jsonData.elementary_basic}
+        onChange={(e) => {
+          saveData("elementary_basic", e.target.value);
+        }}
       />
       <FieldDate
-        idname="elementaryFrom"
         label="FROM"
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="elementary_from"
+        value={jsonData.elementary_from}
+        onChange={(e) => {
+          saveData("elementary_from", e);
+        }}
       />
       <FieldDate
-        idname="elementaryTo"
         label="TO"
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="elementary_to"
+        value={jsonData.elementary_to}
+        onChange={(e) => {
+          saveData("elementary_to", e);
+        }}
       />
       <FormField
-        idname="eelementaryLevel"
         label="HIGHEST LEVEL/ UNITS EARNED"
+        idname="elementary_level"
+        value={jsonData.elementary_level}
+        onChange={(e) => {
+          saveData("elementary_level", e.target.value);
+        }}
       />
       <FieldDate
-        idname="elementaryYear"
         label="YEAR GRADUATED"
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="elementary_year"
+        value={jsonData.elementary_year}
+        onChange={(e) => {
+          saveData("elementary_year", e);
+        }}
       />
       <FormField
-        idname="elementaryHonor"
         label="SCHOLARSHIP/ ACADEMIC HONORS RECEIVED"
         md={6}
+        idname="elementary_honor"
+        value={jsonData.elementary_honor}
+        onChange={(e) => {
+          saveData("elementary_honor", e.target.value);
+        }}
       />
 
       <FieldDivider label="SECONDARY" />
-      <FormField idname="secondarySchool" label="SCHOOL NAME" />
       <FormField
-        idname="secondaryDegree"
+        label="SCHOOL NAME"
+        idname="secondary_name"
+        value={jsonData.secondary_name}
+        onChange={(e) => {
+          saveData("secondary_name", e.target.value);
+        }}
+      />
+      <FormField
         label="BASIC EDUCATION/ DEGREE/ COURSE"
+        idname="secondary_basic"
+        value={jsonData.secondary_basic}
+        onChange={(e) => {
+          saveData("secondary_basic", e.target.value);
+        }}
       />
       <FieldDate
-        idname="secondaryFrom"
         label="FROM"
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="secondary_from"
+        value={jsonData.secondary_from}
+        onChange={(e) => {
+          saveData("secondary_from", e);
+        }}
       />
       <FieldDate
         idname="secondaryTo"
@@ -70,19 +117,39 @@ export default function EducationalBackground(props) {
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="secondary_to"
+        value={jsonData.secondary_to}
+        onChange={(e) => {
+          saveData("secondary_to", e);
+        }}
       />
-      <FormField idname="secondaryLevel" label="HIGHEST LEVEL/ UNITS EARNED" />
+      <FormField
+        label="HIGHEST LEVEL/ UNITS EARNED"
+        idname="secondary_level"
+        value={jsonData.secondary_level}
+        onChange={(e) => {
+          saveData("secondary_level", e.target.value);
+        }}
+      />
       <FieldDate
-        idname="secondaryYear"
         label="YEAR GRADUATED"
         views={["year"]}
         type="date"
         format="yyyy"
+        idname="secondary_year"
+        value={jsonData.secondary_year}
+        onChange={(e) => {
+          saveData("secondary_year", e);
+        }}
       />
       <FormField
-        idname="secondaryHonor"
         label="SCHOLARSHIP/ ACADEMIC HONORS RECEIVED"
         md={6}
+        idname="secondary_honor"
+        value={jsonData.secondary_honor}
+        onChange={(e) => {
+          saveData("secondary_honor", e.target.value);
+        }}
       />
 
       <FieldDivider label="VOCATIONAL/ TRADE" />

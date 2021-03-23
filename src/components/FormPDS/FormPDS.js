@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FormPDS(props) {
   const classes = useStyles();
-  const { saveData, pdsData } = props;
+  const { saveData, jsonData } = props;
   return (
     <Container component="main" maxWidth="lg">
       <CssBaseline />
@@ -30,11 +30,11 @@ export default function FormPDS(props) {
             "VIII. Other Info",
           ]}
           tabContent={[
-            <PersonalInformation saveData={saveData} pdsData={pdsData} />,
-            <FamilyBackground />,
-            <EducationalBackground />,
-            <IvtoVii />,
-            <OtherInfo />,
+            <PersonalInformation saveData={saveData} jsonData={jsonData} />,
+            <FamilyBackground saveData={saveData} jsonData={jsonData} />,
+            <EducationalBackground saveData={saveData} jsonData={jsonData} />,
+            <IvtoVii saveData={saveData} jsonData={jsonData} />,
+            <OtherInfo saveData={saveData} jsonData={jsonData} />,
           ]}
         />
       </form>

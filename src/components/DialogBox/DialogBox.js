@@ -65,7 +65,11 @@ export default function DialogBox(props) {
             <Typography variant="h6" className={classes.title}>
               {title}
             </Typography>
-            <Button autoFocus color="inherit" onClick={submitData}>
+            <Button
+              autoFocus
+              color="inherit"
+              onClick={(submitData, handleClose)}
+            >
               save
             </Button>
           </Toolbar>
