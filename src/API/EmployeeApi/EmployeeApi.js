@@ -4,7 +4,7 @@ export default {
   getEmployees: (setResponseData) => {
     Request("GET", "employee", setResponseData);
   },
-  addNewEmployee: (jsonData) => {
-    Request("POST", "employee", jsonData);
+  addNewEmployee: (jsonData, handleClose, setSmallDialogState) => {
+    Request("POST", "employee", jsonData, handleClose, setSmallDialogState);
   },
 };

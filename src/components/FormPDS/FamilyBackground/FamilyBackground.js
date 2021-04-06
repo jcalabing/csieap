@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 
 import { FormField, FieldDivider, FieldDate } from "./../../FormField";
 import { ChildrenField } from "./../../IncrementingComponent/IncrementingComponent";
-import AddComponent from "./../../AddComponent/AddComponent";
+import NewAddComponent from "./../../NewAddComponent";
 
 export default function FamilyBackground(props) {
   const { saveData, jsonData } = props;
@@ -77,8 +77,14 @@ export default function FamilyBackground(props) {
         }}
       />
 
-      <FieldDivider label="CHILDREN" />
-      <AddComponent>{ChildrenField}</AddComponent>
+      <NewAddComponent
+        value={jsonData.children}
+        onSave={saveData}
+        dataKey={"children"}
+        title="CHILDREN"
+      >
+        {ChildrenField}
+      </NewAddComponent>
 
       <FieldDivider label="FATHER" />
       <FormField

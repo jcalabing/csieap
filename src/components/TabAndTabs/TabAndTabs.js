@@ -59,15 +59,20 @@ export default function TabAndTabs(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Tabs variant="fullWidth" value={value} onChange={handleChange}>
+        <Tabs
+          // variant="fullWidth"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+        >
           {tabName.map((tabname, index) => {
-            return <Tab label={tabname} {...a11yProps(index)} />;
+            return <Tab label={tabname} key={index} {...a11yProps(index)} />;
           })}
         </Tabs>
       </AppBar>
       {tabContent.map((tabcontent, index) => {
         return (
-          <TabPanel value={value} index={index}>
+          <TabPanel value={value} index={index} key={index}>
             {tabcontent}
           </TabPanel>
         );

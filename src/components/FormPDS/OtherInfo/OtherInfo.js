@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 import AddComponent from "./../../AddComponent/AddComponent";
+import NewAddComponent from "./../../NewAddComponent";
 import { HobbyField, ReferenceField } from "./../../IncrementingComponent";
 import {
   FormField,
@@ -14,8 +15,15 @@ export default function OtherInfo(props) {
   const { saveData, jsonData } = props;
   return (
     <Grid container spacing={2}>
-      <FieldDivider label="VIII. OTHER INFORMATION" />
-      <AddComponent>{HobbyField}</AddComponent>
+      <FieldDivider />
+      <NewAddComponent
+        value={jsonData.hobbies}
+        onSave={saveData}
+        dataKey={"hobbies"}
+        title="VIII. OTHER INFORMATION"
+      >
+        {HobbyField}
+      </NewAddComponent>
       <FieldDivider />
       <Typography>
         Are you related by consanguinity or affinity to the appointing or
@@ -303,8 +311,15 @@ export default function OtherInfo(props) {
           saveData("solo_parent_id", e.target.value);
         }}
       />
-      <FieldDivider label="REFERENCES (Person not related by consanguinity or affinity to applicant/appointee)" />
-      <AddComponent>{ReferenceField}</AddComponent>
+      <FieldDivider />
+      <NewAddComponent
+        value={jsonData.references}
+        onSave={saveData}
+        dataKey={"references"}
+        title="REFERENCES (Person not related by consanguinity or affinity to applicant/appointee)"
+      >
+        {ReferenceField}
+      </NewAddComponent>
       <FieldDivider label="GOVERNMENT ISSUED ID" />
       <FormField
         label="GOVERNMENT ISSUED ID"

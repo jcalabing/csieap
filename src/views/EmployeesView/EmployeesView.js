@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles, Paper, Grid, Button } from "@material-ui/core";
-import EmployeeData from "./EmployeeData";
 import Extheme from "./../../assets/Extheme/Extheme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import DialogBox from "../../components/DialogBox";
 import FormPDS from "../../components/FormPDS";
 import EmployeeApi from "./../../API/EmployeeApi";
+import GetEmployeeData from "./GetEmployeeData";
+import SmallDialog from "./../../components/SmallDialog/SmallDialog";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 export default function EmployeesView() {
   const classes = useStyles();
   const [jsonData, setValue] = React.useState({});
+  const [smallDialogState, setSmallDialogState] = React.useState(false);
 
   const saveData = (Key, Value) => {
     var newValue = jsonData;
@@ -40,8 +42,14 @@ export default function EmployeesView() {
                   </Button>
                 );
               }}
-              // submitData={() => console.log(jsonData)}
-              submitData={() => EmployeeApi.addNewEmployee(jsonData)}
+              submitData={() => console.log(jsonData)}
+              submitData={(handleClose) =>
+                EmployeeApi.addNewEmployee(
+                  jsonData,
+                  handleClose,
+                  setSmallDialogState
+                )
+              }
             >
               <FormPDS saveData={saveData} jsonData={jsonData}></FormPDS>
             </DialogBox>
@@ -49,7 +57,15 @@ export default function EmployeesView() {
         </Grid>
       </Grid>
       <Grid item xs={12} component={Paper} className={classes.marginalized}>
-        <EmployeeData className={classes.container} />
+        <GetEmployeeData />
+      </Grid>
+      <Grid item xs={12} component={Paper} className={classes.marginalized}>
+        <SmallDialog
+          smallDialogState={smallDialogState}
+          setSmallDialogState={setSmallDialogState}
+          title="Error"
+          body="Please provide data to all Required Input Field(s) or Contact the System Administrator."
+        />
       </Grid>
     </Grid>
   );

@@ -10,6 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { amber } from "@material-ui/core/colors";
+import SmallDialog from "./../SmallDialog/SmallDialog";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -39,8 +40,13 @@ export default function DialogBox(props) {
 
   const handleClose = () => {
     setOpen(false);
+    window.location.reload();
   };
 
+  const handleSubmit = () => {
+    // console.log("DialogBox");
+    submitData(handleClose);
+  };
   return (
     <div>
       {triggerDialog(handleClickOpen)}
@@ -68,7 +74,8 @@ export default function DialogBox(props) {
             <Button
               autoFocus
               color="inherit"
-              onClick={(submitData, handleClose)}
+              // onClick={(submitData, handleClose)}
+              onClick={() => handleSubmit()}
             >
               save
             </Button>

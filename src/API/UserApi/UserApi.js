@@ -4,7 +4,7 @@ export default {
   getUsers: (setResponseData) => {
     Request("GET", "user", setResponseData);
   },
-  addNewUser: (jsonData) => {
-    Request("POST", "user", jsonData);
+  addNewUser: (jsonData, handleClose, setSmallDialogState) => {
+    Request("POST", "user", jsonData, handleClose, setSmallDialogState);
   },
 };

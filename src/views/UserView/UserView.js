@@ -7,6 +7,7 @@ import FormUser from "../../components/FormUser";
 import UserData from "./UserData";
 import GetUserData from "./GetUserData/";
 import UserApi from "./../../API/UserApi";
+import SmallDialog from "./../../components/SmallDialog/SmallDialog";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function UserView() {
   const classes = useStyles();
   const [jsonData, setValue] = React.useState({});
+  const [smallDialogState, setSmallDialogState] = React.useState(false);
 
   const saveData = (Key, Value) => {
     var newValue = jsonData;
@@ -41,7 +43,9 @@ export default function UserView() {
                   </Button>
                 );
               }}
-              submitData={() => UserApi.addNewUser(jsonData)}
+              submitData={(handleClose) =>
+                UserApi.addNewUser(jsonData, handleClose, setSmallDialogState)
+              }
               // submitData={() => console.log(jsonData)}
             >
               <FormUser saveData={saveData} jsonData={jsonData}></FormUser>
@@ -51,6 +55,14 @@ export default function UserView() {
       </Grid>
       <Grid item xs={12} component={Paper} className={classes.marginalized}>
         <GetUserData />
+      </Grid>
+      <Grid item xs={12} component={Paper} className={classes.marginalized}>
+        <SmallDialog
+          smallDialogState={smallDialogState}
+          setSmallDialogState={setSmallDialogState}
+          title="Error"
+          body="Please provide data to all Required Input Field(s) or Contact the System Administrator."
+        />
       </Grid>
     </Grid>
   );

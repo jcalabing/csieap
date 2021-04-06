@@ -1,11 +1,12 @@
 import React from "react";
 import { makeStyles, CssBaseline, Container } from "@material-ui/core";
-import TabAndTabs from "./../TabAndTabs/TabAndTabs";
+import TabAndTabs from "./../TabAndTabs";
 import PersonalInformation from "./PersonalInformation";
 import FamilyBackground from "./FamilyBackground/";
 import EducationalBackground from "./EducationalBackground/";
-import IvtoVii from "./IvtoVii/IvtoVii";
-import OtherInfo from "./OtherInfo/OtherInfo";
+import IvtoVii from "./IvtoVii";
+import OtherInfo from "./OtherInfo";
+import OfficeInfo from "./OfficeInfo";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -28,6 +29,13 @@ export default function FormPDS(props) {
             "III. Education Info",
             "IV - VII",
             "VIII. Other Info",
+            "Office Info",
+            // "I",
+            // "II",
+            // "III",
+            // "IV - VII",
+            // "VIII",
+            // "IX",
           ]}
           tabContent={[
             <PersonalInformation saveData={saveData} jsonData={jsonData} />,
@@ -35,6 +43,7 @@ export default function FormPDS(props) {
             <EducationalBackground saveData={saveData} jsonData={jsonData} />,
             <IvtoVii saveData={saveData} jsonData={jsonData} />,
             <OtherInfo saveData={saveData} jsonData={jsonData} />,
+            <OfficeInfo saveData={saveData} jsonData={jsonData} />,
           ]}
         />
       </form>

@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 
 import { FormField, FieldDivider, FieldDate } from "./../../FormField";
 
-import AddComponent from "./../../AddComponent/AddComponent";
+import NewAddComponent from "./../../NewAddComponent";
 import {
   CollegeField,
   GraduateField,
@@ -152,15 +152,32 @@ export default function EducationalBackground(props) {
         }}
       />
 
-      <FieldDivider label="VOCATIONAL/ TRADE" />
+      <NewAddComponent
+        value={jsonData.vocational}
+        onSave={saveData}
+        dataKey={"vocational"}
+        title="VOCATIONAL/TRADE"
+      >
+        {VocationalField}
+      </NewAddComponent>
 
-      <AddComponent>{VocationalField}</AddComponent>
+      <NewAddComponent
+        value={jsonData.college}
+        onSave={saveData}
+        dataKey={"college"}
+        title="COLLEGE"
+      >
+        {CollegeField}
+      </NewAddComponent>
 
-      <FieldDivider label="COLLEGE" />
-      <AddComponent>{CollegeField}</AddComponent>
-
-      <FieldDivider label="GRADUATE STUDIES" />
-      <AddComponent>{GraduateField}</AddComponent>
+      <NewAddComponent
+        value={jsonData.graduate}
+        onSave={saveData}
+        dataKey={"graduate"}
+        title="GRADUATE STUDIES"
+      >
+        {GraduateField}
+      </NewAddComponent>
     </Grid>
   );
 }
