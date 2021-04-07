@@ -18,7 +18,7 @@ const columns = [
   },
   {
     field: "department",
-    headerName: "Department/Office",
+    headerName: "Unit",
     width: 200,
   },
 ];

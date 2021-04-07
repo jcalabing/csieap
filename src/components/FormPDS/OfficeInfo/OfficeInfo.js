@@ -37,7 +37,7 @@ export default function OfficeInfo(props) {
         }}
       />
       <FormField
-        label="DEPARTMENT"
+        label="UNIT"
         idname="department"
         md={6}
         value={jsonData.department}

@@ -25,9 +25,9 @@ export default function IvtoVii(props) {
 
       <FieldDivider />
       <NewAddComponent
-        value={jsonData.experience}
+        value={jsonData.work}
         onSave={saveData}
-        dataKey={"experience"}
+        dataKey={"work"}
         title="V. WORK EXPERIENCE"
       >
         {WorkField}

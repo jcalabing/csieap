@@ -155,25 +155,37 @@ export function EligibilityField(props) {
             props.insertData(props.index, "eligibility", element.target.value);
           }}
         />
-        <FormField idname={"rating" + props.index} label="RATING" sm={3} />
+        <FormField
+          idname={"rating" + props.index}
+          label="RATING"
+          sm={3}
+          value={props.childData.eligibility_rating}
+          onChange={(element) => {
+            props.insertData(
+              props.index,
+              "eligibility_rating",
+              element.target.value
+            );
+          }}
+        />
         <FieldDate
           idname={"examDate" + props.index}
           label="EXAMNATION/ CONFERMENT"
           type="date"
           format="MM/dd/yyyy"
-          value={props.childData.eligiblity_date}
+          value={props.childData.eligibility_date}
           onChange={(element) => {
-            props.insertData(props.index, "eligiblity_date", element);
+            props.insertData(props.index, "eligibility_date", element);
           }}
         />
         <FormField
           idname={"place" + props.index}
           label="PLACE"
-          value={props.childData.eligiblity_place}
+          value={props.childData.eligibility_place}
           onChange={(element) => {
             props.insertData(
               props.index,
-              "eligiblity_place",
+              "eligibility_place",
               element.target.value
             );
           }}
@@ -181,11 +193,11 @@ export function EligibilityField(props) {
         <FormField
           idname={"number" + props.index}
           label="NUMBER"
-          value={props.childData.eligiblity_number}
+          value={props.childData.eligibility_number}
           onChange={(element) => {
             props.insertData(
               props.index,
-              "eligiblity_number",
+              "eligibility_number",
               element.target.value
             );
           }}
@@ -195,13 +207,9 @@ export function EligibilityField(props) {
           label="VALIDITY"
           type="date"
           format="MM/dd/yyyy"
-          value={props.childData.eligiblity_validity}
+          value={props.childData.eligibility_validity}
           onChange={(element) => {
-            props.insertData(
-              props.index,
-              "eligiblity_validity",
-              element.target.value
-            );
+            props.insertData(props.index, "eligibility_validity", element);
           }}
         />
       </Grid>

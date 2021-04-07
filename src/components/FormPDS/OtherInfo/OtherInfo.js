@@ -17,9 +17,9 @@ export default function OtherInfo(props) {
     <Grid container spacing={2}>
       <FieldDivider />
       <NewAddComponent
-        value={jsonData.hobbies}
+        value={jsonData.hobby}
         onSave={saveData}
-        dataKey={"hobbies"}
+        dataKey={"hobby"}
         title="VIII. OTHER INFORMATION"
       >
         {HobbyField}
@@ -313,9 +313,9 @@ export default function OtherInfo(props) {
       />
       <FieldDivider />
       <NewAddComponent
-        value={jsonData.references}
+        value={jsonData.reference}
         onSave={saveData}
-        dataKey={"references"}
+        dataKey={"reference"}
         title="REFERENCES (Person not related by consanguinity or affinity to applicant/appointee)"
       >
         {ReferenceField}
