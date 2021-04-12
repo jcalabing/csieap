@@ -1,9 +1,20 @@
 import { React, Component } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import Button from "@material-ui/core/Button";
+import {
+  DataGrid,
+  ColDef,
+  ValueGetterParams,
+  CellParams,
+  GridApi,
+} from "@material-ui/data-grid";
 import EmployeeApi from "./../../../API/EmployeeApi";
+import Extheme from "./../../../assets/Extheme";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import DialogBox from "./../../../components/DialogBox";
+import FormPDS from "./../../../components/FormPDS";
+import PDSBox from "./../../../components/PDSBox/PDSBox";
 
-const columns = [
-  //   { field: "id", headerName: "ID Number", width: 150 },
+const columns: ColDef[] = [
   { field: "firstname", headerName: "First Name", width: 200 },
   { field: "surname", headerName: "Sur Name", width: 200 },
   {
@@ -21,6 +32,35 @@ const columns = [
     headerName: "Unit",
     width: 200,
   },
+  {
+    field: "",
+    headerName: "Actions",
+    sortable: false,
+    width: 160,
+    disableClickEventBubbling: true,
+    renderCell: (params: CellParams) => {
+      const onView = () => {
+        console.log("VIEW DATA");
+        console.log(params.row);
+      };
+      const onEdit = () => {
+        console.log("EDIT DATA");
+        console.log(params.row);
+      };
+
+      return (
+        <>
+          <Button onClick={onView}>View</Button>
+          <PDSBox
+            title="Update Employee"
+            buttonName="EDIT"
+            jsonData={params.row}
+            isUpdate={true}
+          />
+        </>
+      );
+    },
+  },
 ];
 
 class GetEmployeeData extends Component {
@@ -30,7 +70,6 @@ class GetEmployeeData extends Component {
 
   componentDidMount() {
     EmployeeApi.getEmployees((data) => this.setState({ responseData: data }));
-    console.log("loaded!");
   }
 
   render() {

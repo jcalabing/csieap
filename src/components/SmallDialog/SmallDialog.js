@@ -19,8 +19,6 @@ export default function SmallDialog(props) {
     setSmallDialogState(false);
   };
 
-  console.log(smallDialogState);
-  console.log("Small Dialog");
   return (
     <div>
       <Dialog

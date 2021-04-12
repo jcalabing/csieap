@@ -26,6 +26,15 @@ export default function Request(
           console.log("Data Posted");
           console.log(response.data.message);
           // handleClose();
+          window.location.reload();
+          return true;
+        }
+      }
+      if (method === "PUT") {
+        if (response.data.success) {
+          console.log("Data Updated");
+          console.log(response.data.message);
+          // handleClose();
           // window.location.reload();
           return true;
         }

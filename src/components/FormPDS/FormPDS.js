@@ -30,12 +30,6 @@ export default function FormPDS(props) {
             "IV - VII",
             "VIII. Other Info",
             "Office Info",
-            // "I",
-            // "II",
-            // "III",
-            // "IV - VII",
-            // "VIII",
-            // "IX",
           ]}
           tabContent={[
             <PersonalInformation saveData={saveData} jsonData={jsonData} />,

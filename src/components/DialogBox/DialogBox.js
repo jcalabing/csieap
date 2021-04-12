@@ -34,34 +34,28 @@ export default function DialogBox(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    window.location.reload();
+  const handleCloseOpen = () => {
+    setOpen(!open);
   };
 
   const handleSubmit = () => {
     // console.log("DialogBox");
-    submitData(handleClose);
+    submitData(handleCloseOpen);
   };
   return (
     <div>
-      {triggerDialog(handleClickOpen)}
+      {triggerDialog(handleCloseOpen)}
       <Dialog
         fullScreen
         open={open}
-        onClose={handleClose}
+        onClose={handleCloseOpen}
         TransitionComponent={Transition}
       >
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
               edge="start"
-              // color="inherit"
-              onClick={handleClose}
+              onClick={handleCloseOpen}
               aria-label="close"
               color="secondary"
               className={classes.button}
@@ -71,12 +65,7 @@ export default function DialogBox(props) {
             <Typography variant="h6" className={classes.title}>
               {title}
             </Typography>
-            <Button
-              autoFocus
-              color="inherit"
-              // onClick={(submitData, handleClose)}
-              onClick={() => handleSubmit()}
-            >
+            <Button autoFocus color="inherit" onClick={() => handleSubmit()}>
               save
             </Button>
           </Toolbar>
