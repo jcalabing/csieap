@@ -12,7 +12,8 @@ import Extheme from "./../../../assets/Extheme";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import DialogBox from "./../../../components/DialogBox";
 import FormPDS from "./../../../components/FormPDS";
-import PDSBox from "./../../../components/PDSBox/PDSBox";
+import PDSBox from "./../../../components/PDSBox";
+import PDFBox from "./../../../components/PDFBox";
 
 const columns: ColDef[] = [
   { field: "firstname", headerName: "First Name", width: 200 },
@@ -36,21 +37,25 @@ const columns: ColDef[] = [
     field: "",
     headerName: "Actions",
     sortable: false,
-    width: 160,
+    width: 200,
     disableClickEventBubbling: true,
     renderCell: (params: CellParams) => {
-      const onView = () => {
-        console.log("VIEW DATA");
-        console.log(params.row);
-      };
-      const onEdit = () => {
-        console.log("EDIT DATA");
-        console.log(params.row);
-      };
+      // const onView = () => {
+      //   PdfView;
+      // };
+      // const onEdit = () => {
+      //   console.log("EDIT DATA");
+      //   console.log(params.row);
+      // };
 
       return (
         <>
-          <Button onClick={onView}>View</Button>
+          {/* <Button onClick={}>View</Button> */}
+          <PDFBox
+            title="Personal Data Sheet PDF View"
+            buttonName="PDF VIEW"
+            jsonData={params.row}
+          />
           <PDSBox
             title="Update Employee"
             buttonName="EDIT"
