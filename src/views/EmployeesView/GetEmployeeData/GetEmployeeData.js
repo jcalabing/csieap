@@ -14,6 +14,7 @@ import DialogBox from "./../../../components/DialogBox";
 import FormPDS from "./../../../components/FormPDS";
 import PDSBox from "./../../../components/PDSBox";
 import PDFBox from "./../../../components/PDFBox";
+import EmpView from "./../../../components/EmpView/EmpView";
 
 const columns: ColDef[] = [
   { field: "firstname", headerName: "First Name", width: 200 },
@@ -37,23 +38,19 @@ const columns: ColDef[] = [
     field: "",
     headerName: "Actions",
     sortable: false,
-    width: 200,
+    width: 300,
     disableClickEventBubbling: true,
     renderCell: (params: CellParams) => {
-      // const onView = () => {
-      //   PdfView;
-      // };
-      // const onEdit = () => {
-      //   console.log("EDIT DATA");
-      //   console.log(params.row);
-      // };
-
       return (
         <>
-          {/* <Button onClick={}>View</Button> */}
+          <EmpView
+            title="Employee Profile"
+            buttonName="VIEW"
+            jsonData={params.row}
+          />
           <PDFBox
             title="Personal Data Sheet PDF View"
-            buttonName="PDF VIEW"
+            buttonName="PDF"
             jsonData={params.row}
           />
           <PDSBox

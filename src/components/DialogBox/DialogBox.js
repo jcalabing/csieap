@@ -39,7 +39,6 @@ export default function DialogBox(props) {
   };
 
   const handleSubmit = () => {
-    // console.log("DialogBox");
     submitData(handleCloseOpen);
   };
   return (

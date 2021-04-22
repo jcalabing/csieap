@@ -342,7 +342,7 @@ export default function OtherInfo(props) {
         }}
       />
       <FormField
-        label="ISSUANCE DETAILS"
+        label="DATE PLACE OF ISSUANCE"
         sm={6}
         md={4}
         idname="issued_detail"

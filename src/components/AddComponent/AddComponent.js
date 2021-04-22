@@ -1,8 +1,6 @@
 import React from "react";
 import { IconButton, Grid } from "@material-ui/core";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
-import { FieldDivider } from "./../FormField/FormField";
 
 class AddComponent extends React.Component {
   state = {
@@ -14,7 +12,7 @@ class AddComponent extends React.Component {
   };
 
   componentDidMount() {
-    console.log("Add Component Loaded");
+    // console.log("Add Component Loaded");
     var newValue = [];
     if (this.props.value) {
       newValue = this.props.value;
@@ -24,8 +22,8 @@ class AddComponent extends React.Component {
         oldChildList[index] = this.childFunction(index, element);
       });
 
-      console.log("oldchildlist");
-      console.log(oldChildList);
+      // console.log("oldchildlist");
+      // console.log(oldChildList);
       this.setState({
         childDataList: newValue,
         childList: oldChildList,
@@ -44,7 +42,8 @@ class AddComponent extends React.Component {
 
     return (
       <ParentComponent addChild={this.onAddChild}>
-        {reverseList}
+        {/* {reverseList} */}
+        {this.state.childList}
       </ParentComponent>
     );
   }

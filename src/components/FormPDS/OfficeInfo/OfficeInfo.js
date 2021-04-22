@@ -14,7 +14,7 @@ export default function OfficeInfo(props) {
   return (
     <Grid container spacing={2}>
       {/* <FieldDivider label="I. PERSONAL INFORMATION" /> */}
-      <RequiredField
+      {/* <RequiredField
         label="POSITION TITLE"
         idname="position_title"
         md={6}
@@ -22,10 +22,10 @@ export default function OfficeInfo(props) {
         onChange={(e) => {
           saveData("position_title", e.target.value);
         }}
-      />
+      /> */}
 
       <FieldDate
-        label="APPOINTMENT DATE"
+        label="PCA APPOINTMENT DATE"
         type="date"
         format="MM/dd/yyyy"
         md={6}
@@ -36,7 +36,7 @@ export default function OfficeInfo(props) {
           saveData("appointment_date", e);
         }}
       />
-      <FormField
+      {/* <FormField
         label="UNIT"
         idname="department"
         md={6}
@@ -44,9 +44,8 @@ export default function OfficeInfo(props) {
         onChange={(e) => {
           saveData("department", e.target.value);
         }}
-      />
-
-      <SelectField
+      /> */}
+      {/* <SelectField
         label="APPOINTMENT STATUS"
         options={["Job Order", "Contract of Service", "Regular"]}
         idname="appointment_status"
@@ -55,8 +54,8 @@ export default function OfficeInfo(props) {
         onChange={(e) => {
           saveData("appointment_status", e.target.value);
         }}
-      />
-      <FormField
+      /> */}
+      {/* <FormField
         label="PCA ID"
         idname="pca_id"
         md={6}
@@ -64,7 +63,7 @@ export default function OfficeInfo(props) {
         onChange={(e) => {
           saveData("pca_id", e.target.value);
         }}
-      />
+      /> */}
     </Grid>
   );
 }

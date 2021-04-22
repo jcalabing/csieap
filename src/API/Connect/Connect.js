@@ -6,7 +6,7 @@ export default {
       method: method,
       // url: "http://127.0.0.1:5001/" + url,
       // url: "http://localhost:5001/" + url,
-      url: "http://192.168.0.101:5001/" + url,
+      url: "http://192.168.0.10:5001/" + url,
       data: data,
       headers: {
         "content-type": "application/json",
