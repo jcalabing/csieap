@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   TextField,
   InputLabel,
@@ -14,6 +14,8 @@ import {
 } from "@material-ui/pickers";
 
 import DateFnsUtils from "@date-io/date-fns";
+
+import Moment from "moment";
 
 function FormFields(props) {
   const {
@@ -132,8 +134,11 @@ function FieldDates(props) {
           defaultValue={value}
           value={selectedDate}
           onChange={(e) => {
-            onChange(e);
-            handleDateChange(e);
+            var formattedDate = Moment(e).format(
+              format === "yyyy" ? "YYYY" : "MM/DD/YYYY"
+            );
+            onChange(formattedDate);
+            handleDateChange(formattedDate);
           }}
           KeyboardButtonProps={{
             "aria-label": "change date",

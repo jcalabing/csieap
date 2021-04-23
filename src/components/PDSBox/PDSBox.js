@@ -41,7 +41,7 @@ export default function PDSBox(props) {
           // submitData={() => console.log(tempData)}
           submitData={(handleClose) => {
             if (isUpdate === true) {
-              console.log("update");
+              // console.log("update");
               EmployeeApi.updateEmployee(
                 tempData,
                 handleClose,
@@ -49,7 +49,8 @@ export default function PDSBox(props) {
                 jsonData["employee_id"]
               );
             } else {
-              console.log("add");
+              // console.log("add");
+              // console.warn(tempData);
               EmployeeApi.addNewEmployee(
                 tempData,
                 handleClose,
