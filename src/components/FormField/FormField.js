@@ -30,6 +30,8 @@ function FormFields(props) {
     xs,
     onChange,
     value,
+    multiline,
+    rows,
   } = props;
   return (
     <Grid item xs={xs ? xs : 12} sm={sm ? sm : 6} md={md ? md : 3}>
@@ -45,6 +47,8 @@ function FormFields(props) {
         format={format}
         onChange={onChange}
         value={value}
+        rows={rows ? rows : 1}
+        multiline={multiline ? multiline : false}
       />
     </Grid>
   );

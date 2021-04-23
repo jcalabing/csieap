@@ -50,12 +50,12 @@ export default function PDSBox(props) {
               );
             } else {
               // console.log("add");
-              // console.warn(tempData);
-              EmployeeApi.addNewEmployee(
-                tempData,
-                handleClose,
-                setSmallDialogState
-              );
+              console.warn(tempData);
+              // EmployeeApi.addNewEmployee(
+              //   tempData,
+              //   handleClose,
+              //   setSmallDialogState
+              // );
             }
           }}
         >
