@@ -26,7 +26,7 @@ export default function Request(
           console.log("Data Posted");
           console.log(response.data.message);
           // handleClose();
-          window.location.reload();
+          // window.location.reload();
           return true;
         }
       }
@@ -35,7 +35,7 @@ export default function Request(
           console.log("Data Updated");
           console.log(response.data.message);
           // handleClose();
-          window.location.reload();
+          // window.location.reload();
           return true;
         }
       }

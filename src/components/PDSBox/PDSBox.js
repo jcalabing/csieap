@@ -41,6 +41,7 @@ export default function PDSBox(props) {
           // submitData={() => console.log(tempData)}
           submitData={(handleClose) => {
             if (isUpdate === true) {
+              console.warn(tempData);
               // console.log("update");
               EmployeeApi.updateEmployee(
                 tempData,

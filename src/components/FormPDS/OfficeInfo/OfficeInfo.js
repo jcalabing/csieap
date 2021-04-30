@@ -44,10 +44,11 @@ export default function OfficeInfo(props) {
       </Grid>
       <Grid item xs={12} md={6}>
         <PhotoFile
-          value={jsonData.photo}
-          onChange={(e) => {
-            saveData("photoData", e);
-          }}
+          value={jsonData.id}
+          // value={jsonData.photo}
+          // onChange={(e) => {
+          //   saveData("photoData", e);
+          // }}
         />
       </Grid>
     </Grid>
